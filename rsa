@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+"""Factorize as many numbers as possible into a product of two smaller numbers.
+"""
+import sys
+
+
+def factorize():
+    """search file and factorize the given set of numbers
+    into two prime numbers format n = p*q
+    """
+    try:
+        file = sys.argv[1]
+        with open(file) as f:
+            for Line_num in f:
+                Line_num = int(Line_num)
+                if Line_num % 2 == 0:
+                        print("{}={}*{}".format(Line_num, Line_num // 2, 2))
+                        continue
+                i = 3
+
+                while i < Line_num // 2:
+                    if Line_num % i == 0:
+                        print("{}={}*{}".format(Line_num, Line_num // i, i))
+                        break
+                    i = i + 2
+
+                if i == (Line_num // 2) + 1:
+                    print("{}={}*{}".format(Line_num, Line_num, 1))
+
+    except (IndexError):
+        pass
+
+
+factorize()
