@@ -2,12 +2,12 @@
 
 import sys
 
+
 def factorize(the_number):
 
     """Create 2 factors for a given number."""
 
     Fact1 = 2
-
 
     while (the_number % Fact1):
         if (Fact1 <= the_number):
@@ -15,6 +15,7 @@ def factorize(the_number):
 
     Fact2 = the_number // Fact1
     return (Fact2, Fact1)
+
 
 if len(sys.argv) != 2:
     sys.exit(f"Wrong usage: {sys.argv[0]} <file_path>")
